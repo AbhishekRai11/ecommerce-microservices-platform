@@ -1,0 +1,1 @@
+package com.abhishek.ecommerce.product;import org.springframework.data.jpa.repository.JpaRepository;import java.util.*;public interface ProductRepository extends JpaRepository<Product,UUID>{List<Product>findByActiveTrue();List<Product>findByCategoryAndActiveTrue(String category);}
