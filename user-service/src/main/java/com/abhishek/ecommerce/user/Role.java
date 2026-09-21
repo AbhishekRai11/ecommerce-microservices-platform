@@ -1,0 +1,1 @@
+package com.abhishek.ecommerce.user; public enum Role { CUSTOMER, ADMIN }
