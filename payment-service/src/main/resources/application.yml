@@ -1,0 +1,25 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: payment-service
+  datasource:
+    url: jdbc:mysql://localhost:3310/payment_db?createDatabaseIfNotExist=true
+    username: app
+    password: app
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: payment-service
+      auto-offset-reset: earliest
+      properties:
+        spring.json.trusted.packages: com.abhishek.ecommerce.common
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
