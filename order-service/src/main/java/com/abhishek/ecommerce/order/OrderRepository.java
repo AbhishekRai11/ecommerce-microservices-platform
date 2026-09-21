@@ -1,0 +1,1 @@
+package com.abhishek.ecommerce.order;import org.springframework.data.jpa.repository.JpaRepository;import java.util.*;public interface OrderRepository extends JpaRepository<OrderEntity,UUID>{List<OrderEntity>findByUserId(String userId);}
