@@ -1,0 +1,1 @@
+package com.abhishek.ecommerce.order;public enum OrderStatus{PAYMENT_PENDING,PAID,PAYMENT_FAILED,CANCELLED}
