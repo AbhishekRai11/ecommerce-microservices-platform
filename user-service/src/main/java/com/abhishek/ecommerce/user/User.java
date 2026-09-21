@@ -1,0 +1,4 @@
+package com.abhishek.ecommerce.user;
+import jakarta.persistence.*; import java.util.UUID;
+@Entity @Table(name="users") public class User { @Id @GeneratedValue(strategy=GenerationType.UUID) private UUID id; @Column(nullable=false,unique=true) private String email; @Column(nullable=false) private String password; @Enumerated(EnumType.STRING) private Role role=Role.CUSTOMER; private String name;
+ public UUID getId(){return id;} public String getEmail(){return email;} public void setEmail(String v){email=v;} public String getPassword(){return password;} public void setPassword(String v){password=v;} public Role getRole(){return role;} public void setRole(Role v){role=v;} public String getName(){return name;} public void setName(String v){name=v;} }
