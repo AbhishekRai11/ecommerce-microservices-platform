@@ -13,6 +13,12 @@ spring:
     open-in-view: false
   kafka:
     bootstrap-servers: localhost:9092
+    consumer:
+      group-id: order-service
+      auto-offset-reset: earliest
+      properties:
+        spring.json.trusted.packages: com.abhishek.ecommerce.common
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
 eureka:
   client:
     service-url:
