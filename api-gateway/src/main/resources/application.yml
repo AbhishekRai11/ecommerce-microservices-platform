@@ -1,0 +1,11 @@
+server: { port: 8080 }
+spring:
+  application: { name: api-gateway }
+  cloud:
+    gateway:
+      discovery:
+        locator: { enabled: true, lower-case-service-id: true }
+eureka:
+  client: { service-url: { defaultZone: ${EUREKA_URL:http://localhost:8761/eureka} } }
+app: { jwt: { secret: ${JWT_SECRET:change-me-to-a-very-long-secret-key-for-local-development-only} } }
+management: { endpoints: { web: { exposure: { include: health,info } } } }
