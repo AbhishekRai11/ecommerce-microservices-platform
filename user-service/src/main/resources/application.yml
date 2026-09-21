@@ -1,8 +1,22 @@
-server: { port: 8081 }
+server:
+  port: 8081
 spring:
-  application: { name: user-service }
-  datasource: { url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/user_db?createDatabaseIfNotExist=true, username: ${MYSQL_USER:app}, password: ${MYSQL_PASSWORD:app} }
-  jpa: { hibernate: { ddl-auto: update }, open-in-view: false }
-  kafka: { bootstrap-servers: ${KAFKA_URL:localhost:9092} }
-eureka: { client: { service-url: { defaultZone: ${EUREKA_URL:http://localhost:8761/eureka} } } }
-app: { jwt: { secret: ${JWT_SECRET:change-me-to-a-very-long-secret-key-for-local-development-only} } }
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:mysql://localhost:3307/user_db?createDatabaseIfNotExist=true
+    username: app
+    password: app
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  kafka:
+    bootstrap-servers: localhost:9092
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+app:
+  jwt:
+    secret: change-me-to-a-very-long-secret-key-for-local-development-only
